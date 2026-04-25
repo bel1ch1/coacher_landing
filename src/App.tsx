@@ -7,11 +7,25 @@ function App() {
   useEffect(() => {
     const revealElements = Array.from(document.querySelectorAll<HTMLElement>('[data-reveal]'));
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const setElementVisibility = (element: HTMLElement) => {
+      const rect = element.getBoundingClientRect();
+      const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+      const viewportWidth = window.innerWidth || document.documentElement.clientWidth;
+      const isVisible =
+        rect.top < viewportHeight * 0.94 &&
+        rect.bottom > viewportHeight * 0.06 &&
+        rect.left < viewportWidth &&
+        rect.right > 0;
+
+      element.classList.toggle('is-visible', isVisible);
+    };
 
     if (prefersReducedMotion) {
       revealElements.forEach((element) => element.classList.add('is-visible'));
       return undefined;
     }
+
+    revealElements.forEach(setElementVisibility);
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -20,8 +34,8 @@ function App() {
         });
       },
       {
-        rootMargin: '-8% 0px -8% 0px',
-        threshold: 0.16,
+        rootMargin: '0px 0px -6% 0px',
+        threshold: 0.01,
       },
     );
 

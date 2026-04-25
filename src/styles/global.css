@@ -201,11 +201,18 @@ button {
 
 .hero {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(320px, 480px);
+  grid-template-columns: minmax(0, 0.92fr) minmax(300px, 420px);
   align-items: center;
-  gap: 4rem;
+  gap: clamp(3rem, 7vw, 6.5rem);
   min-height: calc(100vh - 82px);
   padding-top: 4rem;
+}
+
+.hero__content {
+  position: relative;
+  z-index: 2;
+  min-width: 0;
+  max-width: 700px;
 }
 
 [data-reveal] {
@@ -254,11 +261,12 @@ p {
 }
 
 h1 {
-  max-width: 760px;
+  max-width: 700px;
   margin-bottom: 1.4rem;
   font-size: clamp(3.2rem, 8vw, 7rem);
   line-height: 0.9;
   letter-spacing: -0.075em;
+  text-wrap: balance;
 }
 
 h2 {
@@ -355,10 +363,11 @@ h3 {
 
 .phone-preview {
   position: relative;
+  z-index: 1;
   display: grid;
+  justify-self: end;
   justify-items: center;
   gap: 1.2rem;
-  animation: floatIn 900ms 150ms ease both;
 }
 
 .phone-preview__halo {
@@ -766,18 +775,6 @@ h3 {
   }
 }
 
-@keyframes floatIn {
-  from {
-    opacity: 0;
-    transform: translateY(34px) rotateX(8deg);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0) rotateX(0);
-  }
-}
-
 @keyframes puckMove {
   0%,
   100% {
@@ -827,6 +824,17 @@ h3 {
   }
 }
 
+@media (max-width: 1120px) and (min-width: 901px) {
+  .hero {
+    grid-template-columns: minmax(0, 1fr) minmax(280px, 360px);
+    gap: 3.25rem;
+  }
+
+  h1 {
+    font-size: clamp(3rem, 6.8vw, 5.85rem);
+  }
+}
+
 @media (max-width: 900px) {
   .nav__links {
     display: none;
@@ -834,12 +842,17 @@ h3 {
 
   .hero {
     grid-template-columns: 1fr;
-    gap: 3rem;
+    gap: 3.5rem;
     padding-top: 3rem;
+  }
+
+  .hero__content {
+    max-width: 100%;
   }
 
   .phone-preview {
     grid-row: 2;
+    justify-self: center;
   }
 
   .product__grid,
@@ -864,7 +877,12 @@ h3 {
   }
 
   h1 {
-    font-size: clamp(3rem, 15vw, 4.8rem);
+    font-size: clamp(2.75rem, 13.5vw, 4.35rem);
+    line-height: 0.95;
+  }
+
+  .hero {
+    gap: 2.75rem;
   }
 
   .hero__highlights {
@@ -872,7 +890,7 @@ h3 {
   }
 
   .phone-device {
-    width: min(100%, 330px);
+    width: min(100%, 315px);
   }
 
   .phone-preview__controls {
