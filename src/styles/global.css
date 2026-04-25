@@ -358,6 +358,7 @@ h3 {
   display: grid;
   justify-items: center;
   gap: 1.2rem;
+  animation: floatIn 900ms 150ms ease both;
 }
 
 .phone-preview__halo {

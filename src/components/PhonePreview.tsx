@@ -47,7 +47,7 @@ export function PhonePreview() {
   );
 
   return (
-    <div className="phone-preview" data-reveal>
+    <div className="phone-preview">
       <div className="phone-preview__halo" />
       <div className="phone-device" aria-label="Интерактивное превью приложения">
         <div className="phone-device__side phone-device__side--left" />
