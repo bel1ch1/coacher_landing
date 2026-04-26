@@ -451,6 +451,332 @@ h3 {
   text-transform: uppercase;
 }
 
+.mobile-phone {
+  display: none;
+}
+
+.mobile-phone__device {
+  position: relative;
+  width: min(100%, 315px);
+  aspect-ratio: 9 / 19.6;
+  padding: 0.66rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 2.25rem;
+  background:
+    linear-gradient(120deg, rgba(255, 255, 255, 0.34), transparent 11%),
+    linear-gradient(305deg, rgba(255, 255, 255, 0.12), transparent 18%),
+    linear-gradient(180deg, #303238 0%, #111215 28%, #050505 100%);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.13),
+    inset 0 -18px 32px rgba(0, 0, 0, 0.58),
+    0 38px 110px rgba(0, 0, 0, 0.76);
+}
+
+.mobile-phone__device::before {
+  content: "";
+  position: absolute;
+  inset: 0.35rem;
+  z-index: 1;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 1.95rem;
+  pointer-events: none;
+}
+
+.mobile-phone__bezel {
+  position: absolute;
+  inset: 0.78rem;
+  z-index: 1;
+  border: 0.48rem solid #050506;
+  border-radius: 1.7rem;
+  pointer-events: none;
+}
+
+.mobile-phone__island {
+  position: absolute;
+  top: 1.15rem;
+  left: 50%;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.46rem;
+  width: 7.2rem;
+  height: 2rem;
+  padding: 0 0.58rem;
+  border-radius: 999px;
+  background:
+    radial-gradient(circle at 18% 50%, rgba(48, 52, 58, 0.72), transparent 0.35rem),
+    linear-gradient(180deg, #111216, #020202);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.05),
+    0 8px 20px rgba(0, 0, 0, 0.42);
+  transform: translateX(-50%);
+}
+
+.mobile-phone__island span {
+  width: 0.42rem;
+  height: 0.42rem;
+  border-radius: 999px;
+  background: #222934;
+  box-shadow: 0 0 8px rgba(142, 155, 172, 0.48);
+}
+
+.mobile-phone__island i {
+  width: 0.62rem;
+  height: 0.62rem;
+  border-radius: 999px;
+  background: radial-gradient(circle at 34% 30%, #44546a, #08090a 65%);
+}
+
+.mobile-phone__side {
+  position: absolute;
+  z-index: 0;
+  width: 0.22rem;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #3f4248, #15161a);
+  box-shadow: 0 0 14px rgba(255, 255, 255, 0.08);
+}
+
+.mobile-phone__side--left {
+  left: -0.2rem;
+  top: 8.7rem;
+  height: 5.6rem;
+}
+
+.mobile-phone__side--right {
+  right: -0.2rem;
+  top: 11.5rem;
+  height: 4.2rem;
+}
+
+.mobile-phone__screen {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  overflow: hidden;
+  padding: 3rem 1rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 1.85rem;
+  background:
+    radial-gradient(circle at 50% 2%, rgba(215, 208, 189, 0.22), transparent 13rem),
+    radial-gradient(circle at 18% 60%, rgba(105, 112, 123, 0.18), transparent 10rem),
+    linear-gradient(180deg, #17191c 0%, #0b0c0e 100%);
+}
+
+.mobile-phone__screen::after {
+  content: "";
+  position: absolute;
+  inset: auto 1rem 1rem;
+  height: 7rem;
+  border-radius: 0.9rem;
+  background: linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.06));
+}
+
+.mobile-phone__status,
+.mobile-phone__chips,
+.mobile-phone__controls {
+  display: flex;
+  align-items: center;
+}
+
+.mobile-phone__status {
+  justify-content: space-between;
+  color: rgba(255, 255, 255, 0.52);
+  font-size: 0.72rem;
+}
+
+.mobile-phone__hero {
+  margin-top: 1.5rem;
+}
+
+.mobile-phone__hero p {
+  margin-bottom: 0.45rem;
+  color: var(--accent);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.mobile-phone__hero h3 {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  line-height: 0.96;
+}
+
+.mobile-phone__metric {
+  display: grid;
+  gap: 0.2rem;
+  width: max-content;
+  padding: 0.85rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 0.75rem;
+  background: rgba(255, 255, 255, 0.055);
+}
+
+.mobile-phone__metric strong {
+  font-size: 2.4rem;
+  line-height: 1;
+}
+
+.mobile-phone__metric span,
+.mobile-phone__description {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.mobile-phone__rink {
+  position: relative;
+  min-height: 12rem;
+  margin: 1.2rem 0;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.9rem;
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    #111316;
+  background-size: 34px 34px;
+}
+
+.mobile-phone__crease {
+  position: absolute;
+  left: 50%;
+  bottom: -2.7rem;
+  width: 8.8rem;
+  height: 8.8rem;
+  border: 2px solid rgba(215, 208, 189, 0.42);
+  border-radius: 999px 999px 0 0;
+  border-bottom: 0;
+  transform: translateX(-50%);
+}
+
+.mobile-phone__goalie {
+  position: absolute;
+  left: 50%;
+  bottom: 1.1rem;
+  width: 3.2rem;
+  height: 2rem;
+  border-radius: 1rem 1rem 0.55rem 0.55rem;
+  background:
+    linear-gradient(90deg, transparent 0 16%, rgba(244, 241, 234, 0.92) 16% 31%, transparent 31% 69%, rgba(244, 241, 234, 0.92) 69% 84%, transparent 84%),
+    linear-gradient(180deg, #d7d0bd, #737985);
+  box-shadow:
+    0 -1rem 0 -0.42rem #0b0c0e,
+    0 0 0 0.35rem rgba(255, 255, 255, 0.08),
+    0 18px 34px rgba(0, 0, 0, 0.42);
+  transform: translateX(-50%);
+}
+
+.mobile-phone__line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  opacity: 0.55;
+}
+
+.mobile-phone__line--blue {
+  left: 33%;
+  background: #69707b;
+}
+
+.mobile-phone__line--red {
+  left: 66%;
+  background: #b9afa0;
+}
+
+.mobile-phone__puck {
+  position: absolute;
+  left: 18%;
+  top: 32%;
+  width: 1.1rem;
+  height: 1.1rem;
+  border-radius: 999px;
+  background: #050505;
+  box-shadow:
+    0 0 0 3px rgba(255, 255, 255, 0.1),
+    42px -34px 50px rgba(215, 208, 189, 0.35);
+  animation: mobilePuckMove 3.8s ease-in-out infinite;
+}
+
+.mobile-phone__motion {
+  position: absolute;
+  width: 7rem;
+  height: 7rem;
+  border: 1px solid rgba(215, 208, 189, 0.2);
+  border-radius: 999px;
+}
+
+.mobile-phone__motion--one {
+  right: 12%;
+  top: 14%;
+  animation: mobilePulseRing 2.8s ease infinite;
+}
+
+.mobile-phone__motion--two {
+  left: 14%;
+  bottom: 8%;
+  animation: mobilePulseRing 2.8s 600ms ease infinite;
+}
+
+.mobile-phone__description {
+  min-height: 3.9rem;
+  margin-bottom: 1rem;
+}
+
+.mobile-phone__chips {
+  position: relative;
+  z-index: 1;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: auto;
+}
+
+.mobile-phone__chips span,
+.mobile-phone__controls button {
+  border: 1px solid rgba(255, 255, 255, 0.11);
+  border-radius: 0.55rem;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.mobile-phone__chips span {
+  padding: 0.42rem 0.6rem;
+  color: var(--muted);
+  font-size: 0.72rem;
+}
+
+.mobile-phone__controls {
+  position: relative;
+  z-index: 2;
+  gap: 0.45rem;
+  width: 100%;
+  margin-top: 1rem;
+  padding: 0.4rem;
+  border: 1px solid var(--line);
+  border-radius: 0.85rem;
+  background: rgba(7, 7, 8, 0.68);
+  backdrop-filter: blur(18px);
+}
+
+.mobile-phone__controls button {
+  flex: 1;
+  cursor: pointer;
+  padding: 0.62rem 0.55rem;
+  color: var(--muted);
+  transition:
+    color 180ms ease,
+    background 180ms ease,
+    transform 180ms ease;
+}
+
+.mobile-phone__controls button:hover,
+.mobile-phone__controls button.is-active {
+  color: #101010;
+  background: var(--accent);
+  transform: translateY(-1px);
+}
+
 .section__heading {
   margin-bottom: 2rem;
 }
@@ -529,6 +855,34 @@ h3 {
 @keyframes spin {
   to {
     transform: rotate(360deg);
+  }
+}
+
+@keyframes mobilePuckMove {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  45% {
+    transform: translate(92px, 40px);
+  }
+
+  70% {
+    transform: translate(136px, 84px);
+  }
+}
+
+@keyframes mobilePulseRing {
+  0%,
+  100% {
+    opacity: 0.22;
+    transform: scale(0.78);
+  }
+
+  50% {
+    opacity: 0.72;
+    transform: scale(1.04);
   }
 }
 
@@ -627,12 +981,17 @@ h3 {
 
   .phone-preview {
     width: min(100%, 330px);
-    min-height: 560px;
+    min-height: auto;
   }
 
   .spline-phone__stage {
-    width: min(100%, 330px);
-    height: 560px;
+    display: none;
+  }
+
+  .mobile-phone {
+    display: grid;
+    justify-items: center;
+    width: min(100%, 315px);
   }
 
   .waitlist {
